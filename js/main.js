@@ -30,7 +30,7 @@ function runCircleCanvas() {
 
 		draw(x, y, size) {
 			ctx.strokeStyle = this.style;
-
+			ctx.strokeWidth = 1.5;
 
             let w = size;
             let h = w*0.865;
@@ -100,7 +100,10 @@ function runCircleCanvas() {
 		let hex = new Hex(width/2+0.5, height/2+0.5, size*0.25, "rgba(255,255,255,1)");
         for (let i = -10; i < 10; i++) {
 			let pos = -i > 0 ? -i : i;
-            let h = new Hex((width/2+0.5)+(Math.sin(i)*10*size/50), height/2+0.5, size*0.25, "rgba(255,255,255," + pos*0.03 + ")");
+
+            let h = new Hex((width/2+0.5)+(Math.sin(i*inc*0.001)*size*0.1), height/2+0.5, size*0.25, "rgba(255,255,255," + (10-pos)*0.03 + ")");
+//            let h = new Hex((width/2+0.5)+(i*size/50), height/2+0.5, size*0.25, "rgba(255,255,255," + (10-pos)*0.03 + ")");
+
         }
         //hexes.push(hex);
 
@@ -113,5 +116,9 @@ function runCircleCanvas() {
 
 	init();
 }
+
+document.querySelector("body").addEventListener('click', function(event) {
+	document.querySelector(".info").classList.add("show");
+});
 
 runCircleCanvas();
