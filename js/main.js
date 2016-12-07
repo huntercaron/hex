@@ -8,6 +8,9 @@ function runCircleCanvas() {
 	let inc = 0;
     let hexes = [];
 
+	let versionCount = 2;
+	let version = Math.floor(Math.random() * (versionCount)) + 1
+
 	class Hex {
 		constructor(x, y, size, style) {
 			this.intX = x;
@@ -97,18 +100,30 @@ function runCircleCanvas() {
         ctx.clearRect(0,0, width, height);
 		inc++;
 
-		let hex = new Hex(width/2+0.5, height/2+0.5, size*0.25, "rgba(255,255,255,1)");
-        for (let i = -10; i < 10; i++) {
-			let pos = -i > 0 ? -i : i;
+		switch (version) {
+		  case 1:
+			let hex = new Hex(width/2+0.5, height/2+0.5, size*0.25, "rgba(255,255,255," + (1-Math.sin(inc*0.013)) + ")");
+			for (let i = -5; i < 6; i++) {
+				let pos = -i > 0 ? -i : i;
 
-            let h = new Hex((width/2+0.5)+(Math.sin(i*inc*0.001)*size*0.1), height/2+0.5, size*0.25, "rgba(255,255,255," + (10-pos)*0.03 + ")");
-//            let h = new Hex((width/2+0.5)+(i*size/50), height/2+0.5, size*0.25, "rgba(255,255,255," + (10-pos)*0.03 + ")");
+				let h = new Hex((width/2+0.5)+(Math.sin(i*inc*0.0005)*size*0.4), height/2+0.5, size*0.25, "rgba(255,255,255," + (10-pos)*0.05 + ")");
+				//let h = new Hex((width/2+0.5)+(i*size/50), height/2+0.5, size*0.25, "rgba(255,255,255," + (10-pos)*0.03 + ")");
+			}
+		    break;
 
-        }
-        //hexes.push(hex);
+		  case 2:
+		  	let hx = new Hex(width/2+0.5, height/2+0.5, size*0.4, "rgba(255,255,255,1)");
 
+			for (let i = -5; i < 6; i++) {
+				let pos = -i > 0 ? -i : i;
 
-        //hexes.push(hex);
+				let h = new Hex(width/2+0.5, height/2+0.5, (size*0.4)+(Math.sin(i*inc*0.0007)*size*0.4), "rgba(255,255,255," + (10-pos)*0.05 + ")");
+				//let h = new Hex((width/2+0.5)+(i*size/50), height/2+0.5, size*0.25, "rgba(255,255,255," + (10-pos)*0.03 + ")");
+			}
+
+		    break;
+		}
+
 
 
 		window.requestAnimationFrame(draw)
