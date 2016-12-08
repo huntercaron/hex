@@ -8,8 +8,9 @@ function runCircleCanvas() {
 	let inc = 0;
     let hexes = [];
 
-	let versionCount = 2;
+	let versionCount = 3;
 	let version = Math.floor(Math.random() * (versionCount)) + 1
+	//version = 3;
 
 	class Hex {
 		constructor(x, y, size, style) {
@@ -100,9 +101,11 @@ function runCircleCanvas() {
         ctx.clearRect(0,0, width, height);
 		inc++;
 
+		let hex;
+
 		switch (version) {
 		  case 1:
-			let hex = new Hex(width/2+0.5, height/2+0.5, size*0.25, "rgba(255,255,255," + (1-Math.sin(inc*0.013)) + ")");
+			hex = new Hex(width/2+0.5, height/2+0.5, size*0.25, "rgba(255,255,255," + (1-Math.sin(inc*0.013)) + ")");
 			for (let i = -5; i < 6; i++) {
 				let pos = -i > 0 ? -i : i;
 
@@ -112,7 +115,7 @@ function runCircleCanvas() {
 		    break;
 
 		  case 2:
-		  	let hx = new Hex(width/2+0.5, height/2+0.5, size*0.4, "rgba(255,255,255,1)");
+		  	hex = new Hex(width/2+0.5, height/2+0.5, size*0.4, "rgba(255,255,255,1)");
 
 			for (let i = -5; i < 6; i++) {
 				let pos = -i > 0 ? -i : i;
@@ -122,6 +125,19 @@ function runCircleCanvas() {
 			}
 
 		    break;
+
+			case 3:
+
+			hex = new Hex(width/2+0.5, height/2+0.5, size*0.4, "rgba(255,255,255,1)");
+
+			for (let i = -5; i < 6; i++) {
+				let pos = -i > 0 ? -i : i;
+
+				let h = new Hex(width/2+0.5, height/2+0.5, (size*0.4)+(inc*0.007*size*0.4+i)-(i*400), "rgba(255,255,255," + (((10-pos)*0.05)-(inc*0.004+i*0.1)) + ")");
+				//let h = new Hex((width/2+0.5)+(i*size/50), height/2+0.5, size*0.25, "rgba(255,255,255," + (10-pos)*0.03 + ")");
+			}
+
+			break;
 		}
 
 
@@ -135,5 +151,13 @@ function runCircleCanvas() {
 document.querySelector("body").addEventListener('click', function(event) {
 	document.querySelector(".info").classList.add("show");
 });
+
+function getMousePos(canvas, evt) {
+    var rect = canvas.getBoundingClientRect();
+    return {
+      x: evt.clientX - rect.left,
+      y: evt.clientY - rect.top
+    };
+}
 
 runCircleCanvas();

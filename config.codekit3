@@ -25,6 +25,16 @@
 		"oF": 0,
 		"oS": 0
 		},
+	"\/images\/facebook.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/build\/images\/facebook.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
 	"\/images\/favicon.png": {
 		"ft": 32768,
 		"iS": 16683,
@@ -36,10 +46,40 @@
 	"\/images\/hexagon.svg": {
 		"ft": 2097152,
 		"miP": 0,
-		"oA": 0,
+		"oA": 2,
 		"oAP": "\/build\/images\/hexagon.svg",
-		"oF": 1,
-		"opt": 1,
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/images\/instagram.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/build\/images\/instagram.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/images\/snapchat.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/build\/images\/snapchat.svg",
+		"oF": 0,
+		"opt": 0,
+		"plM": 3758088159,
+		"prP": 0
+		},
+	"\/images\/twitter.svg": {
+		"ft": 2097152,
+		"miP": 0,
+		"oA": 2,
+		"oAP": "\/build\/images\/twitter.svg",
+		"oF": 0,
+		"opt": 0,
 		"plM": 3758088159,
 		"prP": 0
 		},
@@ -86,7 +126,7 @@
 	"displayValue": "hexagon",
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "brackets_gray",
-	"lastBuiltDate": 502782057
+	"lastBuiltDate": 502870086
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
