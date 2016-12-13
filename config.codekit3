@@ -20,9 +20,9 @@
 		"bl": 0,
 		"ft": 16,
 		"ma": 0,
-		"oA": 2,
-		"oAP": "\/build\/css\/main-ck.css",
-		"oF": 0,
+		"oA": 0,
+		"oAP": "\/build\/css\/main.css",
+		"oF": 3,
 		"oS": 0
 		},
 	"\/images\/facebook.svg": {
@@ -98,6 +98,16 @@
 		"sC": 0,
 		"tS": 1
 		},
+	"\/main.css": {
+		"aP": 0,
+		"bl": 0,
+		"ft": 16,
+		"ma": 0,
+		"oA": 2,
+		"oAP": "\/build\/main-ck.css",
+		"oF": 0,
+		"oS": 0
+		},
 	"\/README.md": {
 		"cS": 0,
 		"eF": 1,
@@ -126,7 +136,7 @@
 	"displayValue": "hexagon",
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "brackets_gray",
-	"lastBuiltDate": 502870086
+	"lastBuiltDate": 502930736
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,

@@ -23,13 +23,17 @@ body {
     font-size: 1.6em;
     line-height: 1.6;
     font-weight: 400;
-    font-family: 'Crimson Text', serif;
+    font-family: Georgia, serif;
     color: #222;
     overflow: hidden;
 
     webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
+}
+
+.scroll {
+    overflow: auto;
 }
 
 
@@ -68,6 +72,18 @@ h4 { font-size: 2.4rem; line-height: 1.35; letter-spacing: -.08rem; }
 h5 { font-size: 1.8rem; line-height: 1.5;  letter-spacing: -.05rem; }
 h6 { font-size: 1.6rem; line-height: 1.6;  letter-spacing: 0; }
 
+.italics {
+    font-style: italic;
+    text-decoration: none;
+    color: #666;
+    font-size: 1.3rem;
+}
+
+.italics:hover {
+    color: #666;
+    opacity: 0.5;
+}
+
 
 /* Links
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -89,7 +105,7 @@ canvas {
 
 .canvas-box {
     display: fixed;
-    width: 100%;
+    width: 100vw;
     height: 100vh;
     overflow: hidden;
 }
@@ -106,10 +122,13 @@ h1 {
 h4 {
     margin-top: 12px;
     font-size: 1.4rem;
-    letter-spacing: 4px;
+
 }
 
 .logo {
+    margin: 0 auto;
+    width: 96%;
+    padding-top: 100px;
     padding-bottom: 140px;
 }
 
@@ -119,54 +138,63 @@ h4 {
     justify-content: space-between;
 }
 
-.email {
-    margin-top: 20px;
-}
+
 
 .email p {
-    font-size: 1.4rem;
+    font-size: 1.3rem;
     margin: 0;
-    letter-spacing: 1.2px;
+    letter-spacing: 0.7px;
 }
 
 .address {
-    margin-top: 40px;
+    font-size: 1.2rem;
+    margin: 0;
+    margin-top: 60px;
+}
+
+.email p {
+    font-size: 1.2rem;
 }
 
 .info {
     text-align: center;
-    position: fixed;
+    position: absolute;
     z-index: 1;
     opacity: 0;
-    transition: opacity 0.6s cubic-bezier(.14,.6,.36,1);
+    transition: transform 0.6s cubic-bezier(.14,.6,.36,1),
+    opacity 0.4s cubic-bezier(.14,.6,.36,1);
     background-color: white;
     top: 0;
     left: 0;
-    width: 102vw;
-    height: 105%;
-
-    overflow: scroll;
-
+    width: 100%;
+    min-height: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    transform: translateY(100%);
+
+    -webkit-backface-visibility: hidden;
+    -webkit-transform-style: preserve-3d;
+
+
 }
 
-.res-info {
-    padding: 0 4%;
+.email {
+    margin-top: 20px;
 }
 
 
 .info-box {
     position: relative;
     width: 90%;
-    max-width: 700px;
+    height: 98vh;
+
+    max-width: 680px;
     opacity: 0;
 }
 
 .show {
-    opacity: 1;
 }
+
 
 .email .caps {
     text-transform: uppercase;
@@ -175,25 +203,38 @@ h4 {
     line-height: 1;
 }
 
+.social-box {
+    width: 100%;
+    position: absolute;
+
+    bottom: 40px;
+
+}
+
 .social {
+    margin: 0 auto;
     padding-top: 120px;
     height: 30px;
     width: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: auto;
 }
 
 .social-icon {
     padding: 0 4px;
     height: 30px;
 }
+
 .social-icon img {
     border-radius: 50%;
     border: 0.5px solid black;
 
     height: 100%;
+}
+
+.social-icon img:hover {
+    border-color: rgba(0, 0, 0, 0.5);
 }
 
 .show .info-box  {
@@ -209,17 +250,19 @@ h4 {
     -moz-animation-duration: 2s;
     animation-duration: 2s;
 
-    -webkit-animation-delay: 0.8s;
-    -moz-animation-delay: 0.8s;
-    animation-delay: 0.8s;
+    -webkit-animation-delay: 0s;
+    -moz-animation-delay: 0s;
+    animation-delay: 0s;
 }
 
 @media screen and (max-width: 500px) {
+
     .contact-info {
         flex-direction: column;
     }
 
     .logo {
+        padding-top: 60px;
         padding-bottom: 40px;
     }
 
@@ -246,6 +289,17 @@ h4 {
     }
     to {
         transform: translateY(1px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideFadeIn {
+    from {
+        transform: translateY(100vh);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
         opacity: 1;
     }
 }
