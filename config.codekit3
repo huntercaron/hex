@@ -25,6 +25,14 @@
 		"oF": 3,
 		"oS": 0
 		},
+	"\/images\/chef.jpg": {
+		"ft": 16384,
+		"iS": 75343,
+		"oA": 0,
+		"oAP": "\/build\/images\/chef.jpg",
+		"oF": 0,
+		"opt": 1
+		},
 	"\/images\/facebook.svg": {
 		"ft": 2097152,
 		"miP": 0,
@@ -136,7 +144,7 @@
 	"displayValue": "hexagon",
 	"displayValueWasSetByUser": 1,
 	"iconImageName": "brackets_gray",
-	"lastBuiltDate": 502930736
+	"lastBuiltDate": 505848346
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -622,7 +630,7 @@
 			},
 		"curly": {
 			"active": 0,
-			"optionString": "'all', 'consistent'"
+			"optionString": "'all'"
 			},
 		"default-case": {
 			"active": 0,
@@ -642,7 +650,7 @@
 			},
 		"eqeqeq": {
 			"active": 0,
-			"optionString": "'always'"
+			"optionString": "'always', {'null': 'always'}"
 			},
 		"func-call-spacing": {
 			"active": 0,
@@ -650,7 +658,7 @@
 			},
 		"func-name-matching": {
 			"active": 0,
-			"optionString": "{'includeCommonJSModuleExports': false}"
+			"optionString": "'always', {'includeCommonJSModuleExports': false}"
 			},
 		"func-names": {
 			"active": 0,
@@ -678,7 +686,7 @@
 			},
 		"id-blacklist": {
 			"active": 0,
-			"optionString": "['error', 'data', 'err', 'e', 'cb', 'callback']"
+			"optionString": "'data', 'err', 'e', 'cb', 'callback'"
 			},
 		"id-length": {
 			"active": 0,
@@ -702,7 +710,7 @@
 			},
 		"key-spacing": {
 			"active": 0,
-			"optionString": "'singleLine': {'beforeColon': false, 'afterColon': true, 'mode':'strict'}, 'multiLine': {'beforeColon': false, 'afterColon': true, 'align': 'value', 'mode':'minimum'}"
+			"optionString": "{'singleLine': {'beforeColon': false, 'afterColon': true, 'mode':'strict'}, 'multiLine': {'beforeColon': false, 'afterColon': true, 'align': 'value', 'mode':'minimum'}}"
 			},
 		"keyword-spacing": {
 			"active": 0,
@@ -730,7 +738,7 @@
 			},
 		"max-len": {
 			"active": 0,
-			"optionString": "{'code': 80, 'comments': 80, 'tabWidth': 4, 'ignoreUrls': true, 'ignoreStrings': true, 'ignoreTemplateLiterals': true}"
+			"optionString": "{'code': 80, 'comments': 80, 'tabWidth': 4, 'ignoreUrls': true, 'ignoreStrings': true, 'ignoreTemplateLiterals': true, 'ignoreRegExpLiterals': true}"
 			},
 		"max-lines": {
 			"active": 0,
@@ -1110,7 +1118,7 @@
 			},
 		"no-restricted-syntax": {
 			"active": 0,
-			"optionString": "{'WithStatement', 'try-catch'}"
+			"optionString": "'FunctionExpression', 'WithStatement'"
 			},
 		"no-return-assign": {
 			"active": 0,
@@ -1346,7 +1354,7 @@
 			},
 		"quotes": {
 			"active": 0,
-			"optionString": "'double', 'avoid-escape'"
+			"optionString": "'double', {'avoidEscape': true, 'allowTemplateLiterals': true}"
 			},
 		"radix": {
 			"active": 0,
@@ -1358,7 +1366,7 @@
 			},
 		"require-jsdoc": {
 			"active": 0,
-			"optionString": "{'require': {'FunctionDeclaration': true, 'MethodDefinition': false, 'ClassDeclaration': false}}"
+			"optionString": "{'require': {'FunctionDeclaration': true, 'MethodDefinition': false, 'ClassDeclaration': false, 'ArrowFunctionExpression': false}}"
 			},
 		"require-yield": {
 			"active": 0,
@@ -2171,7 +2179,7 @@
 			"flagValue": -1
 			},
 		"screw-ie8": {
-			"active": 0,
+			"active": 1,
 			"flagValue": -1
 			},
 		"semicolons": {

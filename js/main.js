@@ -389,6 +389,14 @@ document.querySelector("canvas").addEventListener('click', function(event) {
 
 });
 
+document.getElementById("chef").addEventListener('click', function(event) {
+	document.querySelector(".bio").classList.remove("hide-bio");
+});
+
+document.querySelector(".bio").addEventListener('click', function(event) {
+	document.querySelector(".bio").classList.add("hide-bio");
+});
+
 function getMousePos(evt) {
 	let canvas = document.getElementById("canvas");
     var rect = canvas.getBoundingClientRect();
