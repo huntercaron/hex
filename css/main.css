@@ -203,6 +203,22 @@ h4 {
     line-height: 1;
 }
 
+.email:nth-child(2) {
+  display: flex;
+  justify-content: center;
+}
+
+.reservations {
+  text-decoration: none;
+  color: inherit;
+  letter-spacing: 0.7px;
+}
+
+.reservations:hover {
+  opacity: 0.5;
+  color: inherit;
+}
+
 .social-box {
     width: 100%;
     position: absolute;
@@ -322,19 +338,25 @@ h4 {
 
 @media screen and (max-width: 500px) {
 
-    .contact-info {
-        flex-direction: column;
-    }
-
     .logo {
         padding-top: 60px;
         padding-bottom: 40px;
     }
 
-
 }
 
 @media screen and (max-width: 680px) {
+
+    .email:nth-child(2) {
+      display: flex;
+      justify-content: center;
+      margin-top: 2.5rem; 
+    }
+
+    .contact-info {
+        flex-direction: column;
+    }
+
 
     .bio {
         align-items: flex-start;
